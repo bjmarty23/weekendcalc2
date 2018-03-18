@@ -14,7 +14,6 @@ function numbersToPush() {
     $('#y').val('');
     let numbersToSend = {inputOne: inputx,
                          inputTwo: inputy};
-                         console.log(numbersToSend);
 
 $.ajax({
     type: 'POST',
@@ -36,7 +35,7 @@ function totalToDom(){
         url: '/calc'
 
     }).done(function(response){
-        //appendCalc(response);
+        appendCalc(response);
         //if another function need to be called put here
     })
 }

@@ -5,6 +5,8 @@ let app = express();
 const PORT = 5001;
 let bodyParser = require('body-parser');
 let addition;
+let inputOne;
+let inputTwo;
 // this is need for jquery it check the code for the message 
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -20,18 +22,18 @@ function doMath (add){
 app.get('/calc', (req,res) => {
     // let numebersToSend = req.body;
     
-    console.log(addition, '31');
+    console.log(addition, '1');
     res.send(addition);
 
 });
 
 app.post('/calc', (req,res) => {
-    console.log(req.body, '4');
+    console.log(req.body, '2');
     let numbersToSend = req.body;
     num.push(numbersToSend);
     //console.log(num);
     res.sendStatus(200);
-    console.log(num);
+    console.log(num, '3');
 });
 
 // console.log(req.body, '3');
