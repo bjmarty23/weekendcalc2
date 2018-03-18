@@ -4,6 +4,7 @@ let express = require('express');
 let app = express();
 const PORT = 5001;
 let bodyParser = require('body-parser');
+let addition;
 // this is need for jquery it check the code for the message 
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -11,21 +12,16 @@ app.use(bodyParser.urlencoded({extended:true}));
 //use before the app.
 app.use(express.static('server/public'));
 
-function doMath (){
-    
+function doMath (add){
+    addition = parseInt(add.inputOne) + parseInt(add.InputTwo); 
+
 }
 
-
-//access the public folder in server folder.
-//get
-
-//post
-
-
 app.get('/calc', (req,res) => {
-    // let NumebersToSend = req.body;
-    console.log(req.body, '31');
-    res.send(req.body);
+    // let numebersToSend = req.body;
+    
+    console.log(addition, '31');
+    res.send(addition);
 
 });
 
@@ -35,6 +31,7 @@ app.post('/calc', (req,res) => {
     num.push(numbersToSend);
     //console.log(num);
     res.sendStatus(200);
+    console.log(num);
 });
 
 // console.log(req.body, '3');
@@ -47,7 +44,7 @@ app.post('/calc', (req,res) => {
 //listen 
 app.listen(PORT, () => {
     console.log('server is running on port', PORT);
-    console.log(num);
+   
 })
 
 

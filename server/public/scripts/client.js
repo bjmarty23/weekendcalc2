@@ -1,11 +1,9 @@
 //Global Vars
 console.log('slickhead');
 
-
-
 $(document).ready(readyNow);
 function readyNow(){
-$('#add').on('click', );
+$('#add').on('click', numbersToPush);
     console.log('Js sourced');
 
 }
