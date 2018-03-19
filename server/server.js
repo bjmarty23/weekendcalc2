@@ -1,5 +1,5 @@
 //Variables
-//let num = [];
+let num = [];
 let express = require('express');
 let app = express();
 const PORT = 5001;
@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('server/public'));
 
 function doMath (){
-    addition = (inputOne.data) + (InputTwo.data); 
-    console.log(addition, '5');
+    addition = (num.firstchild) + (num.child.next); 
+    console.log( '5');
 }
 
 app.get('/calc', (req,res) => {
@@ -26,10 +26,10 @@ app.get('/calc', (req,res) => {
 
 app.post('/calc', (req,res) => {
     console.log(req.body, '2');//object
-    let numbersToSend = req.body;
-    console.log(numbersToSend ,'1');
-    //num.push(numbersToSend);
-    //console.log(num);
+    let hist = req.body;
+    num.push(hist);
+    console.log(hist ,'1');
+    console.log(num, '3');
     res.sendStatus(200);
    // console.log(num, '3');//in array
 });

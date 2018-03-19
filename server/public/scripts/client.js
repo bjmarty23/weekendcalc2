@@ -40,7 +40,6 @@ $.ajax({
 })
 }
 
-
 function totalToDom(){
     $.ajax({
         type: 'GET',
