@@ -1,12 +1,12 @@
 //Variables
-let num = [];
+//let num = [];
 let express = require('express');
 let app = express();
 const PORT = 5001;
 let bodyParser = require('body-parser');
 let addition;
-let inputOne;
-let inputTwo;
+//let inputX;
+//let inputY;
 // this is need for jquery it check the code for the message 
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -14,26 +14,24 @@ app.use(bodyParser.urlencoded({extended:true}));
 //use before the app.
 app.use(express.static('server/public'));
 
-function doMath (add){
-    addition = parseInt(add.inputOne) + parseInt(add.InputTwo); 
-
+function doMath (){
+    addition = (inputOne.data) + (InputTwo.data); 
+    console.log(addition, '5');
 }
 
 app.get('/calc', (req,res) => {
-    // let numebersToSend = req.body;
-    
-    console.log(addition, '1');
+    console.log('in get',);
     res.send(addition);
-
 });
 
 app.post('/calc', (req,res) => {
-    console.log(req.body, '2');
+    console.log(req.body, '2');//object
     let numbersToSend = req.body;
-    num.push(numbersToSend);
+    console.log(numbersToSend ,'1');
+    //num.push(numbersToSend);
     //console.log(num);
     res.sendStatus(200);
-    console.log(num, '3');
+   // console.log(num, '3');//in array
 });
 
 // console.log(req.body, '3');
